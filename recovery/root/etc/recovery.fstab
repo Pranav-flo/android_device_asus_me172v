@@ -1,0 +1,11 @@
+# mount point	fstype		device
+
+/sdcard 	datamedia 	/dev/null
+/system		ext4		/dev/block/mmcblk1p1
+/cache		ext4		/dev/block/mmcblk1p5
+/data		ext4		/dev/block/mmcblk1p13
+/misc 		emmc 		/dev/block/mmcblk1p9
+/boot		emmc		/dev/block/mmcblk1p2
+/recovery	emmc		/dev/block/mmcblk1p3
+/bootloader	mtd		bootloader
+/radio		emmc		/dev/block/mmcblk1p11
