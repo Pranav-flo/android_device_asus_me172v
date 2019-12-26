@@ -1,13 +1,40 @@
 LOCAL_PATH := device/asus/me172v
 
+BOARD_HAS_NO_REAL_SDCARD := true
+TW_USE_TOOLBOX := true
+TW_EXCLUDE_SUPERSU := true
+TW_EXCLUDE_MTP := true
+TW_OEM_BUILD := true
+
+# Add EXT4 support
+TARGET_USERIMAGES_USE_EXT4 := true
+
+# disables things like sdcard partitioning and may save you some space if TWRP isn't fitting in your recovery patition
+BOARD_HAS_NO_REAL_SDCARD := true
+
+# Removes the 'Reboot bootloader' button
+TW_NO_REBOOT_BOOTLOADER := true
+
+
 TARGET_BOARD_PLATFORM := me172v              # From ro.mediatek.platform, but lowercase value
 TARGET_NO_BOOTLOADER := true
-TARGET_BOOTLOADER_BOARD_NAME :=      # From ro.product.board
+
+# Always use rm -rf to wipe
+TW_ALWAYS_RMRF := true
+# Prevent TWRP from unmounting /system
+TW_NEVER_UNMOUNT_SYSTEM := true
+
+TW_OEM_BUILD := true
+
+
+# Max brightness to prevent display damage
+TW_MAX_BRIGHTNESS := 255
+# Default brightness for TWRP
+TW_DEFAULT_BRIGHTNESS := 150
 
 
 # Recovery
 TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := true            # To add info about F2FS Filesystem Data Block
 # Put The Size of your Recovery Partition below, get it from your "MT****_Android_scatter.txt"
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 15648
 BOARD_CHARGER_SHOW_PERCENTAGE := true
@@ -18,6 +45,7 @@ DEVICE_RESOLUTION := 600x1024                 # The Resolution of your Device
 TARGET_SCREEN_HEIGHT := 1024                     # The height
 TARGET_SCREEN_WIDTH := 600                      # The width
 
+TW_THEME := landscape_mdpi
 
 TW_INCLUDE_NTFS_3G := true                    # Include NTFS Filesystem Support
 TW_INCLUDE_FUSE_EXFAT := true                 # Include Fuse-ExFAT Filesystem Support
